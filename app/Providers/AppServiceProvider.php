@@ -23,6 +23,14 @@ class AppServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        //
+        $this->app->bind('KitsuAnimeSource', function($app) {
+            return new \App\Services\KitsuAnimeSource(new \GuzzleHttp\Client);
+        });
+
+        $this->app->bind('RemoteAnimeSource', function($app) {
+            return $app->make(
+                $app->make('request')->input('source', 'KitsuAnimeSource')
+            );
+        });
     }
 }
