@@ -1,0 +1,38 @@
+@import "../../sass/variables";
+
+@import "node_modules/bootstrap-sass/assets/stylesheets/bootstrap";
+
+@font-face {
+  font-family: "Source Sans Pro";
+  src: url(../../fonts/SourceSansPro.ttf);
+}
+
+@font-face {
+  font-family: "Raleway";
+  src: url(../../fonts/Raleway.ttf);
+}
+
+header {
+  font-weight: 500;
+  font-size: 1.1em;
+  font-family: "Source Sans Pro", sans-serif;
+  background-color: rgba(0,0,0,0.8);
+  margin-bottom: 15px;
+  a {
+    color: #eee;
+    &:hover {
+      color: #fff;
+    }
+  }
+  .menu {
+    list-style: none;
+    margin-bottom: 0;
+    li {
+      display: inline-block;
+      a {
+        padding: 15px;
+        display: block;
+      }
+    }
+  }
+}
