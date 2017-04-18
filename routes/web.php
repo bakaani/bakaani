@@ -19,14 +19,13 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index');
 
-Route::group(['prefix' => 'admin', 'as' => 'admin.', 'namespace' => 'Admin'], function() {
-    Route::post('login', 'LoginController@login');
-    Route::post('logout', 'LoginController@logout')->name('logout');
-    Route::get('login', 'LoginController@showLoginForm')->name('login');
+Route::group([
+    'as' => 'admin.',
+    'prefix' => 'admin',
+    'namespace' => 'Admin',
+    'middleware' => 'auth.admin'
+], function() {
+    Route::get('/', 'DashboardController@index')->name('dashboard');
 
-    Route::group(['middleware' => 'auth.admin'], function() {
-        Route::get('/', 'DashboardController@index')->name('dashboard');
-
-        Route::resource('animes', 'AnimesController');
-    });
+    Route::resource('animes', 'AnimesController');
 });

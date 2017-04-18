@@ -13,6 +13,11 @@
         window.Laravel = {!! json_encode([
             'csrfToken' => csrf_token(),
         ]) !!};
+
+        function logout(e) {
+          e.preventDefault();
+          document.getElementById('logout-form').submit();
+        }
     </script>
     <script src="{{ mix('/js/admin.js') }}"></script>
 
@@ -27,9 +32,14 @@
           <li><a href="{{ route('admin.animes.index') }}">Animes</a></li>
           <li><a href="#">Genres</a></li>
           <li><a href="#">Users</a></li>
-          <li>
-            <a href="{{ route('admin.logout') }}">Logout</a>
-            <form action="{{ route('admin.logout') }}" method="post" style="display: none;">{{ csrf_field() }}</form>
+          <li class="dropdown right">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+              {{ Auth::user()->name }} <span class="caret"></span>
+            </a>
+            <ul class="dropdown-menu" role="menu">
+              <a href="{{ route('logout') }}" onclick="logout(event);">Logout</a>
+              <form id="logout-form" action="{{ route('logout') }}" method="post" style="display: none;">{{ csrf_field() }}</form>
+            </ul>
           </li>
         </ul>
       </div>

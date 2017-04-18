@@ -18,13 +18,14 @@ header {
   font-family: "Source Sans Pro", sans-serif;
   background-color: rgba(0,0,0,0.8);
   margin-bottom: 15px;
-  a {
+  a, .dropdown a {
     color: #eee;
     &:hover {
       color: #fff;
     }
   }
   .menu {
+    padding-left: 0;
     list-style: none;
     margin-bottom: 0;
     li {
@@ -32,6 +33,18 @@ header {
       a {
         padding: 15px;
         display: block;
+      }
+
+      &.right {
+        float: right;
+      }
+    }
+    .dropdown .dropdown-menu {
+      right: 0;
+      left: auto;
+      background-color: rgba(0,0,0,0.8);
+      a {
+        padding: 3px 15px;
       }
     }
   }
