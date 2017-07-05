@@ -1,0 +1,28 @@
+{
+  "name": "bakaani",
+  "private": true,
+  "dependencies": {
+    "lodash": "^4.17.4",
+    "react": "^15.6.1",
+    "react-dom": "^15.6.1",
+    "react-hot-loader": "next"
+  },
+  "version": "1.0.0",
+  "author": "norin.hor@gmail.com",
+  "license": "MIT",
+  "scripts": {
+    "dev": "webpack-dev-server --hot --inline --progress --config client/config/webpack.dev.js",
+    "build": "webpack --config client/config/webpack.dev.js",
+    "build:prod": "NODE_ENV=production webpack --config client/config/webpack.prod.js"
+  },
+  "devDependencies": {
+    "babel-core": "^6.25.0",
+    "babel-loader": "^7.1.1",
+    "babel-preset-es2015": "^6.24.1",
+    "babel-preset-react": "^6.24.1",
+    "babel-preset-stage-2": "^6.24.1",
+    "webpack": "^3.0.0",
+    "webpack-dev-server": "^2.5.0",
+    "webpack-manifest-plugin": "^1.1.0"
+  }
+}

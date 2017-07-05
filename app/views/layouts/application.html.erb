@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Bakaani</title>
+    <%= csrf_meta_tags %>
+    <%#= stylesheet_link_tag webpack_assets_url('bakaani.css') %>
+    <%= javascript_include_tag webpack_assets_url('vendors.js') %>
+    <%= javascript_include_tag webpack_assets_url('bakaani.js') %>
+  </head>
+
+  <body>
+    <%= yield %>
+  </body>
+</html>

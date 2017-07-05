@@ -1,0 +1,18 @@
+default: &default
+  adapter: postgresql
+  encoding: unicode
+  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+
+development:
+  <<: *default
+  database: bakaani_development
+
+test:
+  <<: *default
+  database: bakaani_test
+
+production:
+  <<: *default
+  database: bakaani_production
+  username: bakaani
+  password: <%= ENV['BAKAANI_DATABASE_PASSWORD'] %>
