@@ -8,6 +8,8 @@ end
 gem 'rails', '~> 5.1.2'
 gem 'pg', '~> 0.18'
 gem 'puma', '~> 3.7'
+gem 'carrierwave'
+gem 'mini_magick'
 
 group :development, :test do
   gem 'pry-rails'
@@ -18,4 +20,8 @@ group :development do
   gem 'web-console', '>= 3.3.0'
   gem 'listen', '>= 3.0.5', '< 3.2'
   gem 'spring-watcher-listen', '~> 2.0.0'
+end
+
+group :production do
+  gem 'fog-aws'
 end

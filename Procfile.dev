@@ -1,0 +1,4 @@
+# foreman start -f Procfile.dev
+
+web: rails s -p 3000
+node: yarn install && yarn dev
