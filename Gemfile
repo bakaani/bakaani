@@ -8,8 +8,12 @@ end
 gem 'rails', '~> 5.1.2'
 gem 'pg', '~> 0.18'
 gem 'puma', '~> 3.7'
+
 gem 'carrierwave'
 gem 'mini_magick'
+
+gem 'devise'
+gem 'rolify'
 
 group :development, :test do
   gem 'pry-rails'

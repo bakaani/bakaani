@@ -1,0 +1,41 @@
+@import "variable";
+@import "~bootstrap/scss/bootstrap.scss";
+@import "~font-awesome/scss/font-awesome.scss";
+
+.navbar {
+  border-bottom: 1px solid $input-border-color;
+}
+
+.alert-alert {
+  @extend .alert-danger;
+}
+
+.alert-notice {
+  @extend .alert-success;
+}
+
+.pointer {
+  cursor: pointer;
+}
+
+.search {
+  background-color: #f5f5f5;
+  border: 1px solid $input-border-color;
+  &.active {
+    background-color: $input-bg-focus;
+    border-color: $input-border-focus;
+  }
+  .form-control, .btn {
+    border: none;
+    outline: none;
+    background: transparent;
+  }
+  .btn {
+    i.fa {
+      color: $navbar-light-color;
+    }
+    &:hover i.fa {
+      color: $navbar-light-hover-color;
+    }
+  }
+}

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Bakaani</title>
+    <%= csrf_meta_tags %>
+    <link href="https://fonts.googleapis.com/css?family=Droid+Sans" rel="stylesheet">
+    <%#= stylesheet_link_tag webpack_assets_url('bakaani.css') %>
+    <%= javascript_include_tag 'application.js' %>
+    <%= javascript_include_tag webpack_assets_url('vendors.js') %>
+    <%= javascript_include_tag webpack_assets_url('bakaani.js') %>
+  </head>
+
+  <body>
+    <div class="navbar navbar-toggleable-md navbar-light bg-faded mb-3">
+      <button class="navbar-toggler navbar-toggler-right" data-toggle="collapse">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <%= link_to t('nav.items.dashboard'), '#', class: 'navbar-brand' %>
+      <div class="collapse navbar-collapse">
+        <ul class="navbar-nav mr-auto mt-2 mt-md-0">
+          <li class="nav-item">
+            <%= link_to t('nav.items.animes'), '#', class: 'nav-link' %>
+          </li>
+          <li class="nav-item">
+            <%= link_to t('nav.items.genres'), '#', class: 'nav-link' %>
+          </li>
+        </ul>
+        <%= render_react('SearchForm', placeholder: t('nav.form.placeholder')) %>
+        <ul class="navbar-nav">
+          <li class="nav-item dropdown">
+            <a href="#" class="nav-link dropdown-toggle"
+              data-toggle="dropdown"><%= current_user.name %></a>
+            <div class="dropdown-menu dropdown-menu-right">
+              <%= link_to t('nav.items.logout'), destroy_user_session_path,
+                class: 'dropdown-item', method: :delete %>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div class="container-fluid">
+      <%= yield %>
+    </div>
+  </body>
+</html>

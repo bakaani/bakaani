@@ -16,7 +16,8 @@ module.exports = {
     ],
     modules: [
       'node_modules',
-      path.resolve(__dirname, '../src')
+      path.resolve(__dirname, '../src'),
+      path.resolve(__dirname, '../assets')
     ]
   },
 
@@ -25,7 +26,7 @@ module.exports = {
       {
         test: /\.(js|jsx)$/,
         exclude: /node_modules/,
-        loader: 'babel-loader'
+        use: ['babel-loader']
       }
     ]
   },
@@ -36,7 +37,11 @@ module.exports = {
       fileName: 'assets.json'
     }),
     new webpack.ProvidePlugin({
-      '_': 'lodash'
+      '_': 'lodash',
+      '$': 'jquery',
+      'jQuery': 'jquery',
+      'window.jQuery': 'jquery',
+      'Tether': 'tether'
     }),
     new webpack.optimize.CommonsChunkPlugin({
       minChunks: 2,
