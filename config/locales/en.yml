@@ -17,5 +17,16 @@ en:
     optional_password: "Password (optional)"
     optional_password_confirmation: "Password confirmation (optional)"
 
+  animes:
+    new: 'New Anime'
+    edit: 'Edit Anime'
+    create: 'Create'
+    update: 'Update'
+    title: 'Title'
+    published_at: 'Published'
+    status: 'Status'
+    show_type: 'Type'
+    desc: 'Summary'
+
   admin:
     access_denied: "You don't have permission to access this page!"

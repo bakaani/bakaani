@@ -12,4 +12,8 @@ module ApplicationHelper
       entry.is_a?(String) ? { id: entry } : entry
     )
   end
+
+  def options_for(collection)
+    options_for_select(collection.map { |option| [option.titleize, option] })
+  end
 end

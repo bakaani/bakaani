@@ -1,0 +1,29 @@
+<%= form_for [:admin, @anime] do |f| %>
+  <div class="row">
+    <div class="col-sm-6">
+      <div class="form-group">
+        <%= f.text_field :title, class: 'form-control', placeholder: t('animes.title') %>
+      </div>
+      <div class="form-group">
+        <%= f.date_field :published_at, class: 'form-control', placeholder: t('animes.published_at') %>
+      </div>
+      <div class="form-group">
+        <%= f.select :status, options_for(Anime::STATUSES), { }, class: 'form-control' %>
+      </div>
+      <div class="form-group">
+        <%= f.select :show_type, options_for(Anime::SHOW_TYPES), { }, class: 'form-control' %>
+      </div>
+      <div class="form-group">
+        <%= f.text_area :desc, class: 'form-control', placeholder: t('animes.desc'), rows: 10 %>
+      </div>
+      <div class="form-group">
+        <%= f.submit t("animes.#{@anime.new_record? ? 'create' : 'update'}"), class: 'btn btn-primary' %>
+      </div>
+    </div>
+    <div class="col-sm-6">
+      <div class="form-group">
+        <%= f.file_field :cover, class: 'file-image form-control', 'data-initial-preview' => image_tag(@anime.cover.url).html_safe %>
+      </div>
+    </div>
+  </div>
+<% end %>

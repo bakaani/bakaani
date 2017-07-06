@@ -1,0 +1,16 @@
+<div class="row">
+  <table class="table">
+    <thead>
+      <tr>
+        <th>#</th>
+        <th><%= t('animes.title') %></th>
+        <th><%= t('animes.published_at') %></th>
+        <th><%= t('animes.status') %></th>
+        <th><%= t('animes.show_type') %></th>
+      </tr>
+    </thead>
+    <tbody>
+      <%= render @animes %>
+    </tbody>
+  </table>
+</div>
