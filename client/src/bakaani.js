@@ -1,4 +1,5 @@
 import 'bootstrap';
+import 'bootstrap-fileinput';
 
 import ReactDOM from 'react-dom';
 import React, { Component } from 'react';
@@ -34,4 +35,16 @@ document.addEventListener('DOMContentLoaded', () => {
       render(require('components/search').default);
     });
   }
+
+  $('.file-image').fileinput({
+    initialPreview: '<img src="https://blog.stylingandroid.com/wp-content/themes/lontano-pro/images/no-image-slide.png" />',
+    showUpload: false,
+    autoOrientImage: true,
+    previewFileType: 'image',
+    allowedFileTypes: ['image'],
+    browseClass: 'btn btn-success',
+    removeClass: 'btn btn-danger',
+    removeIcon: '<i class="fa fa-trash"></i>',
+    browseIcon: '<i class="fa fa-picture-o"></i>'
+  });
 });

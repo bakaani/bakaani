@@ -1,6 +1,7 @@
 @import "variable";
 @import "~bootstrap/scss/bootstrap.scss";
 @import "~font-awesome/scss/font-awesome.scss";
+@import "~bootstrap-fileinput/sass/fileinput.scss";
 
 .navbar {
   border-bottom: 1px solid $input-border-color;
@@ -38,4 +39,55 @@
       color: $navbar-light-hover-color;
     }
   }
+}
+
+.hide {
+  display: none;
+}
+
+.glyphicon {
+  @extend .fa;
+}
+
+.glyphicon-file {
+  @extend .fa-file;
+}
+
+.glyphicon-zoom-in {
+  @extend .fa-search-plus;
+}
+
+.glyphicon-hand-down {
+  @extend .fa-hand-o-down
+}
+
+.btn-default {
+  @extend .btn-secondary;
+}
+
+.btn {
+  @extend .btn;
+  @extend .pointer;
+}
+
+.btn-xs {
+  @extend .btn-sm;
+}
+
+.file-input .input-group-btn {
+  flex-direction: initial;
+}
+
+.file-input .file-caption-name {
+  display: initial;
+  height: initial;
+}
+
+.file-input .kv-file-content img {
+  max-width: 100%;
+  max-height: 100%;
+}
+
+.file-input .krajee-default.file-preview-frame .file-thumbnail-footer {
+  height: 80px;
 }
