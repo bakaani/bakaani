@@ -1,3 +1,40 @@
 <div class="row">
-  <h2><%= @anime.title %></h2>
+  <div class="col-sm-8">
+    <div class="card-group">
+      <div class="card">
+        <%= image_tag @anime.cover.url, class: 'card-image img-fluid img-thumbnail mx-auto my-auto d-block', alt: @anime.title %>
+      </div>
+      <div class="card">
+        <div class="card-header">
+          <h2 class="text-center card-title"><%= @anime.title %></h2>
+        </div>
+        <div class="card-block">
+          <p class="card-text"><%= @anime.desc %></p>
+          <small class="card-text text-muted">
+            <div class="inline-info">
+              <span>
+                <%= t('animes.show_type_with_value', value: link_to(@anime.t_show_type, '#')).html_safe %>
+              </span>
+              <i class="fa fa-angle-double-right" aria-hidden="true"></i>
+            </div>
+            <div class="inline-info">
+              <span>
+                <%= t('animes.status_with_value', value: link_to(@anime.t_status, '#')).html_safe %>
+              </span>
+              <i class="fa fa-angle-double-right" aria-hidden="true"></i>
+            </div>
+            <div class="inline-info">
+              <span>
+                <%= t('animes.genres_with_value', value: @anime.genres_links.join(', ')).html_safe %>
+              </span>
+            </div>
+          </small>
+        </div>
+        <small class="card-footer text-muted">
+          <%= t('animes.published_at_with_value', value: @anime.t_published_at) %>
+          <%= link_to 'Edit', edit_admin_anime_path(@anime), class: 'pull-right' %>
+        </small>
+      </div>
+    </div>
+  </div>
 </div>

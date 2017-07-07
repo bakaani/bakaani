@@ -15,6 +15,8 @@ gem 'mini_magick'
 gem 'devise'
 gem 'rolify'
 
+gem 'draper'
+
 group :development, :test do
   gem 'pry-rails'
   gem 'rspec-rails'

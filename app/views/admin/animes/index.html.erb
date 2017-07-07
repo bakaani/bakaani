@@ -1,16 +1,32 @@
 <div class="row">
-  <table class="table">
-    <thead>
-      <tr>
-        <th>#</th>
-        <th><%= t('animes.title') %></th>
-        <th><%= t('animes.published_at') %></th>
-        <th><%= t('animes.status') %></th>
-        <th><%= t('animes.show_type') %></th>
-      </tr>
-    </thead>
-    <tbody>
-      <%= render @animes %>
-    </tbody>
-  </table>
+  <div class="col-sm-12">
+    <div class="card">
+      <div class="card-header">
+        <h2 class="text-center"><%= t('admin.animes.index.title') %></h2>
+      </div>
+      <div class="card-block">
+        <% if @animes.any? %>
+          <table class="table">
+            <thead>
+              <tr>
+                <th>#</th>
+                <th><%= t('animes.title') %></th>
+                <th><%= t('animes.published_at') %></th>
+                <th><%= t('animes.status') %></th>
+                <th><%= t('animes.show_type') %></th>
+              </tr>
+            </thead>
+            <tbody>
+              <%= render @animes %>
+            </tbody>
+          </table>
+        <% else %>
+          <p class="text-center"><%= t('admin.animes.index.no_content') %></p>
+        <% end %>
+      </div>
+      <div class="card-footer">
+        <%= link_to t('admin.animes.index.new_btn'), new_admin_anime_path, class: 'btn btn-primary' %>
+      </div>
+    </div>
+  </div>
 </div>

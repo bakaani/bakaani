@@ -2,20 +2,20 @@ class Admin::AnimesController < AdminController
   before_action :find_anime, only: [:show, :edit, :update, :destroy]
 
   def index
-    @animes = Anime.all
+    @animes = Anime.order(:created_at).decorate
   end
 
   def show
   end
 
   def new
-    @anime = Anime.new
+    @anime = Anime.new.decorate
   end
 
   def create
     @anime = Anime.new(anime_params)
     if @anime.save
-      redirect_to admin_animes_path
+      redirect_to new_admin_anime_path, notice: t('admin.flash.success')
     else
       render :new
     end
@@ -26,7 +26,7 @@ class Admin::AnimesController < AdminController
 
   def update
     if @anime.update_attributes(anime_params)
-      redirect_to admin_anime_path(@anime)
+      redirect_to admin_anime_path(@anime), notice: t('admin.flash.success')
     else
       render :edit
     end
@@ -40,10 +40,13 @@ class Admin::AnimesController < AdminController
   private
 
   def find_anime
-    @anime = Anime.find(params[:id])
+    @anime = Anime.find(params[:id]).decorate
   end
 
   def anime_params
-    params.require(:anime).permit(:title, :desc, :published_at, :cover, :status, :show_type)
+    params.require(:anime).permit(
+      :title, :desc, :show_type, :cover,
+      :published_at, :status, genre_ids: []
+    )
   end
 end

@@ -13,7 +13,7 @@ module ApplicationHelper
     )
   end
 
-  def options_for(collection)
-    options_for_select(collection.map { |option| [option.titleize, option] })
+  def options_for(options, type)
+    options_for_select(options.map { |option| [t("animes.#{type}.#{option}"), option] })
   end
 end

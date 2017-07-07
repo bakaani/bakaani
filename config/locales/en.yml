@@ -22,11 +22,38 @@ en:
     edit: 'Edit Anime'
     create: 'Create'
     update: 'Update'
+    delete: 'Delete'
+    delete_confirm: 'Do you want to delete this anime?'
     title: 'Title'
     published_at: 'Published'
+    published_at_with_value: 'Published at: %{value}'
     status: 'Status'
+    status_with_value: 'Status: %{value}'
     show_type: 'Type'
+    show_type_with_value: 'Type: %{value}'
     desc: 'Summary'
+    genres: 'Genres'
+    genres_with_value: 'Genres: %{value}'
+    statuses:
+      na: 'NA'
+      ongoing: 'Ongoing'
+      completed: 'Completed'
+    show_types:
+      tv: 'TV'
+      ova: 'OVA'
+      ona: 'ONA'
+      movie: 'Movie'
+      special: 'Special'
 
   admin:
     access_denied: "You don't have permission to access this page!"
+    flash:
+      success: 'Successfully save!'
+    animes:
+      index:
+        title: 'Animes'
+        no_content: 'Nothing'
+        new_btn: 'New Anime'
+
+  others:
+    nothing: 'NA'

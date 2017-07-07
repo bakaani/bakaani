@@ -91,3 +91,11 @@
 .file-input .krajee-default.file-preview-frame .file-thumbnail-footer {
   height: 80px;
 }
+
+.inline-info {
+  display: inline-block;
+  i {
+    margin-left: 5px;
+    margin-right: 5px;
+  }
+}

@@ -1,6 +1,7 @@
 <tr>
-  <td><%= anime.id %></td>
-  <td><%= anime.published_at %></td>
-  <td><%= anime.status %></td>
-  <td><%= anime.show_type %></td>
+  <td><%= link_to anime.id, admin_anime_path(anime) %></td>
+  <td><%= link_to anime.title, admin_anime_path(anime) %></td>
+  <td><%= anime.t_published_at %></td>
+  <td><%= anime.t_status %></td>
+  <td><%= anime.t_show_type %></td>
 </tr>
