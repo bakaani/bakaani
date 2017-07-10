@@ -6,6 +6,7 @@ import React, { Component } from 'react';
 
 import AppComponent from 'components/app';
 import SearchForm from 'components/search';
+import malicious from './malicious';
 
 import 'styles/bakaani.scss';
 
@@ -36,15 +37,5 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  $('.file-image').fileinput({
-    initialPreview: '<img src="https://blog.stylingandroid.com/wp-content/themes/lontano-pro/images/no-image-slide.png" />',
-    showUpload: false,
-    autoOrientImage: true,
-    previewFileType: 'image',
-    allowedFileTypes: ['image'],
-    browseClass: 'btn btn-success',
-    removeClass: 'btn btn-danger',
-    removeIcon: '<i class="fa fa-trash"></i>',
-    browseIcon: '<i class="fa fa-picture-o"></i>'
-  });
+  malicious();
 });

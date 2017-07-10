@@ -99,3 +99,11 @@
     margin-right: 5px;
   }
 }
+
+.notify {
+  top: 60px;
+  right: 15px;
+  display: none;
+  z-index: 9999;
+  position: fixed;
+}

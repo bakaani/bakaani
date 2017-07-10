@@ -13,7 +13,7 @@ class Admin::AnimesController < AdminController
   end
 
   def create
-    @anime = Anime.new(anime_params)
+    @anime = Anime.new(anime_params).decorate
     if @anime.save
       redirect_to new_admin_anime_path, notice: t('admin.flash.success')
     else
@@ -34,7 +34,7 @@ class Admin::AnimesController < AdminController
 
   def destroy
     @anime.destroy
-    redirect_to admin_animes_path
+    redirect_to admin_animes_path, notice: t('admin.flash.delete_success')
   end
 
   private
@@ -45,8 +45,8 @@ class Admin::AnimesController < AdminController
 
   def anime_params
     params.require(:anime).permit(
-      :title, :desc, :show_type, :cover,
-      :published_at, :status, genre_ids: []
+      :title, :desc, :show_type, :remote_cover_url,
+      :cover, :published_at, :status, genre_ids: []
     )
   end
 end

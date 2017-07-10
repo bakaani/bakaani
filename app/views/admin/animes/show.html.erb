@@ -32,7 +32,11 @@
         </div>
         <small class="card-footer text-muted">
           <%= t('animes.published_at_with_value', value: @anime.t_published_at) %>
-          <%= link_to 'Edit', edit_admin_anime_path(@anime), class: 'pull-right' %>
+          <div class="pull-right">
+            <%= link_to t('admin.link_or_btn.edit'), edit_admin_anime_path(@anime) %>
+            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
+            <%= link_to t('admin.link_or_btn.delete'), admin_anime_path(@anime), class: 'text-danger', method: :delete, data: { confirm: t('admin.animes.delete_confirm') } %>
+          </div>
         </small>
       </div>
     </div>
