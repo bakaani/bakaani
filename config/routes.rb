@@ -15,5 +15,6 @@ Rails.application.routes.draw do
   namespace :admin do
     root 'dashboard#index'
     resources :animes
+    resources :genres, except: [:new, :edit, :show]
   end
 end

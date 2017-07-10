@@ -23,7 +23,7 @@
             <%= link_to t('nav.items.animes'), admin_animes_path, class: 'nav-link' %>
           </li>
           <li class="nav-item">
-            <%= link_to t('nav.items.genres'), '#', class: 'nav-link' %>
+            <%= link_to t('nav.items.genres'), admin_genres_path, class: 'nav-link' %>
           </li>
         </ul>
         <%= render_react('SearchForm', placeholder: t('nav.form.placeholder')) %>
